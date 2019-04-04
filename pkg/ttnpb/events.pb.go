@@ -197,6 +197,316 @@ func (m *StreamEventsRequest) GetAfter() *time.Time {
 	return nil
 }
 
+// The same as StreamEventsRequest, but then already scoped to the Application type.
+type StreamApplicationEventsRequest struct {
+	ApplicationIDs       []string   `protobuf:"bytes,1,rep,name=application_ids,json=applicationIds,proto3" json:"application_ids,omitempty"`
+	Tail                 uint32     `protobuf:"varint,2,opt,name=tail,proto3" json:"tail,omitempty"`
+	After                *time.Time `protobuf:"bytes,3,opt,name=after,proto3,stdtime" json:"after,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *StreamApplicationEventsRequest) Reset()      { *m = StreamApplicationEventsRequest{} }
+func (*StreamApplicationEventsRequest) ProtoMessage() {}
+func (*StreamApplicationEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_4fd8551d68f51e44, []int{2}
+}
+func (m *StreamApplicationEventsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StreamApplicationEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StreamApplicationEventsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StreamApplicationEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StreamApplicationEventsRequest.Merge(m, src)
+}
+func (m *StreamApplicationEventsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *StreamApplicationEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StreamApplicationEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StreamApplicationEventsRequest proto.InternalMessageInfo
+
+func (m *StreamApplicationEventsRequest) GetApplicationIDs() []string {
+	if m != nil {
+		return m.ApplicationIDs
+	}
+	return nil
+}
+
+func (m *StreamApplicationEventsRequest) GetTail() uint32 {
+	if m != nil {
+		return m.Tail
+	}
+	return 0
+}
+
+func (m *StreamApplicationEventsRequest) GetAfter() *time.Time {
+	if m != nil {
+		return m.After
+	}
+	return nil
+}
+
+// The same as StreamEventsRequest, but then already scoped to the Client type.
+type StreamClientEventsRequest struct {
+	ClientIDs            []string   `protobuf:"bytes,1,rep,name=client_ids,json=clientIds,proto3" json:"client_ids,omitempty"`
+	Tail                 uint32     `protobuf:"varint,2,opt,name=tail,proto3" json:"tail,omitempty"`
+	After                *time.Time `protobuf:"bytes,3,opt,name=after,proto3,stdtime" json:"after,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *StreamClientEventsRequest) Reset()      { *m = StreamClientEventsRequest{} }
+func (*StreamClientEventsRequest) ProtoMessage() {}
+func (*StreamClientEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_4fd8551d68f51e44, []int{3}
+}
+func (m *StreamClientEventsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StreamClientEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StreamClientEventsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StreamClientEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StreamClientEventsRequest.Merge(m, src)
+}
+func (m *StreamClientEventsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *StreamClientEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StreamClientEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StreamClientEventsRequest proto.InternalMessageInfo
+
+func (m *StreamClientEventsRequest) GetClientIDs() []string {
+	if m != nil {
+		return m.ClientIDs
+	}
+	return nil
+}
+
+func (m *StreamClientEventsRequest) GetTail() uint32 {
+	if m != nil {
+		return m.Tail
+	}
+	return 0
+}
+
+func (m *StreamClientEventsRequest) GetAfter() *time.Time {
+	if m != nil {
+		return m.After
+	}
+	return nil
+}
+
+// The same as StreamEventsRequest, but then already scoped to the Gateway type.
+type StreamGatewayEventsRequest struct {
+	GatewayIDs           []string   `protobuf:"bytes,1,rep,name=gateway_ids,json=gatewayIds,proto3" json:"gateway_ids,omitempty"`
+	Tail                 uint32     `protobuf:"varint,2,opt,name=tail,proto3" json:"tail,omitempty"`
+	After                *time.Time `protobuf:"bytes,3,opt,name=after,proto3,stdtime" json:"after,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *StreamGatewayEventsRequest) Reset()      { *m = StreamGatewayEventsRequest{} }
+func (*StreamGatewayEventsRequest) ProtoMessage() {}
+func (*StreamGatewayEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_4fd8551d68f51e44, []int{4}
+}
+func (m *StreamGatewayEventsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StreamGatewayEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StreamGatewayEventsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StreamGatewayEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StreamGatewayEventsRequest.Merge(m, src)
+}
+func (m *StreamGatewayEventsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *StreamGatewayEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StreamGatewayEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StreamGatewayEventsRequest proto.InternalMessageInfo
+
+func (m *StreamGatewayEventsRequest) GetGatewayIDs() []string {
+	if m != nil {
+		return m.GatewayIDs
+	}
+	return nil
+}
+
+func (m *StreamGatewayEventsRequest) GetTail() uint32 {
+	if m != nil {
+		return m.Tail
+	}
+	return 0
+}
+
+func (m *StreamGatewayEventsRequest) GetAfter() *time.Time {
+	if m != nil {
+		return m.After
+	}
+	return nil
+}
+
+// The same as StreamEventsRequest, but then already scoped to the Organization type.
+type StreamOrganizationEventsRequest struct {
+	OrganizationIDs      []string   `protobuf:"bytes,1,rep,name=organization_ids,json=organizationIds,proto3" json:"organization_ids,omitempty"`
+	Tail                 uint32     `protobuf:"varint,2,opt,name=tail,proto3" json:"tail,omitempty"`
+	After                *time.Time `protobuf:"bytes,3,opt,name=after,proto3,stdtime" json:"after,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *StreamOrganizationEventsRequest) Reset()      { *m = StreamOrganizationEventsRequest{} }
+func (*StreamOrganizationEventsRequest) ProtoMessage() {}
+func (*StreamOrganizationEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_4fd8551d68f51e44, []int{5}
+}
+func (m *StreamOrganizationEventsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StreamOrganizationEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StreamOrganizationEventsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StreamOrganizationEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StreamOrganizationEventsRequest.Merge(m, src)
+}
+func (m *StreamOrganizationEventsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *StreamOrganizationEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StreamOrganizationEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StreamOrganizationEventsRequest proto.InternalMessageInfo
+
+func (m *StreamOrganizationEventsRequest) GetOrganizationIDs() []string {
+	if m != nil {
+		return m.OrganizationIDs
+	}
+	return nil
+}
+
+func (m *StreamOrganizationEventsRequest) GetTail() uint32 {
+	if m != nil {
+		return m.Tail
+	}
+	return 0
+}
+
+func (m *StreamOrganizationEventsRequest) GetAfter() *time.Time {
+	if m != nil {
+		return m.After
+	}
+	return nil
+}
+
+// The same as StreamEventsRequest, but then already scoped to the User type.
+type StreamUserEventsRequest struct {
+	UserIDs              []string   `protobuf:"bytes,1,rep,name=user_ids,json=userIds,proto3" json:"user_ids,omitempty"`
+	Tail                 uint32     `protobuf:"varint,2,opt,name=tail,proto3" json:"tail,omitempty"`
+	After                *time.Time `protobuf:"bytes,3,opt,name=after,proto3,stdtime" json:"after,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}   `json:"-"`
+	XXX_sizecache        int32      `json:"-"`
+}
+
+func (m *StreamUserEventsRequest) Reset()      { *m = StreamUserEventsRequest{} }
+func (*StreamUserEventsRequest) ProtoMessage() {}
+func (*StreamUserEventsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_4fd8551d68f51e44, []int{6}
+}
+func (m *StreamUserEventsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *StreamUserEventsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_StreamUserEventsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalTo(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *StreamUserEventsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_StreamUserEventsRequest.Merge(m, src)
+}
+func (m *StreamUserEventsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *StreamUserEventsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_StreamUserEventsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_StreamUserEventsRequest proto.InternalMessageInfo
+
+func (m *StreamUserEventsRequest) GetUserIDs() []string {
+	if m != nil {
+		return m.UserIDs
+	}
+	return nil
+}
+
+func (m *StreamUserEventsRequest) GetTail() uint32 {
+	if m != nil {
+		return m.Tail
+	}
+	return 0
+}
+
+func (m *StreamUserEventsRequest) GetAfter() *time.Time {
+	if m != nil {
+		return m.After
+	}
+	return nil
+}
+
 func init() {
 	proto.RegisterType((*Event)(nil), "ttn.lorawan.v3.Event")
 	golang_proto.RegisterType((*Event)(nil), "ttn.lorawan.v3.Event")
@@ -204,6 +514,16 @@ func init() {
 	golang_proto.RegisterMapType((map[string][]byte)(nil), "ttn.lorawan.v3.Event.ContextEntry")
 	proto.RegisterType((*StreamEventsRequest)(nil), "ttn.lorawan.v3.StreamEventsRequest")
 	golang_proto.RegisterType((*StreamEventsRequest)(nil), "ttn.lorawan.v3.StreamEventsRequest")
+	proto.RegisterType((*StreamApplicationEventsRequest)(nil), "ttn.lorawan.v3.StreamApplicationEventsRequest")
+	golang_proto.RegisterType((*StreamApplicationEventsRequest)(nil), "ttn.lorawan.v3.StreamApplicationEventsRequest")
+	proto.RegisterType((*StreamClientEventsRequest)(nil), "ttn.lorawan.v3.StreamClientEventsRequest")
+	golang_proto.RegisterType((*StreamClientEventsRequest)(nil), "ttn.lorawan.v3.StreamClientEventsRequest")
+	proto.RegisterType((*StreamGatewayEventsRequest)(nil), "ttn.lorawan.v3.StreamGatewayEventsRequest")
+	golang_proto.RegisterType((*StreamGatewayEventsRequest)(nil), "ttn.lorawan.v3.StreamGatewayEventsRequest")
+	proto.RegisterType((*StreamOrganizationEventsRequest)(nil), "ttn.lorawan.v3.StreamOrganizationEventsRequest")
+	golang_proto.RegisterType((*StreamOrganizationEventsRequest)(nil), "ttn.lorawan.v3.StreamOrganizationEventsRequest")
+	proto.RegisterType((*StreamUserEventsRequest)(nil), "ttn.lorawan.v3.StreamUserEventsRequest")
+	golang_proto.RegisterType((*StreamUserEventsRequest)(nil), "ttn.lorawan.v3.StreamUserEventsRequest")
 }
 
 func init() { proto.RegisterFile("lorawan-stack/api/events.proto", fileDescriptor_4fd8551d68f51e44) }
@@ -212,49 +532,68 @@ func init() {
 }
 
 var fileDescriptor_4fd8551d68f51e44 = []byte{
-	// 657 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x93, 0x3f, 0x4c, 0x1b, 0x3d,
-	0x18, 0xc6, 0xed, 0xfc, 0x43, 0x18, 0x3e, 0x3e, 0xe4, 0x8f, 0xaf, 0xba, 0x46, 0xd5, 0x9b, 0x34,
-	0x2c, 0x51, 0xd5, 0x5c, 0x2a, 0x90, 0xaa, 0x0a, 0xba, 0x34, 0x94, 0x81, 0xf5, 0xda, 0x89, 0xa5,
-	0x72, 0x12, 0xe7, 0x38, 0x25, 0xb1, 0xd3, 0x3b, 0x27, 0x34, 0x1b, 0xea, 0x84, 0x3a, 0x21, 0x75,
-	0xe9, 0x52, 0xa9, 0xea, 0x50, 0x31, 0x32, 0xa2, 0x4e, 0x8c, 0x8c, 0x48, 0x5d, 0x98, 0x28, 0xf1,
-	0x75, 0xa0, 0x1b, 0x23, 0x63, 0x15, 0xdf, 0x51, 0x02, 0x41, 0xaa, 0xd4, 0xed, 0x7d, 0xf5, 0x3e,
-	0xaf, 0x9f, 0xc7, 0x3f, 0xcb, 0x04, 0x5a, 0xd2, 0x67, 0x9b, 0x4c, 0x94, 0x02, 0xc5, 0x6a, 0xcd,
-	0x32, 0xeb, 0x78, 0x65, 0xde, 0xe3, 0x42, 0x05, 0x76, 0xc7, 0x97, 0x4a, 0xd2, 0x19, 0xa5, 0x84,
-	0x1d, 0x6b, 0xec, 0xde, 0x62, 0xb6, 0xe4, 0x7a, 0x6a, 0xa3, 0x5b, 0xb5, 0x6b, 0xb2, 0x5d, 0x76,
-	0xa5, 0x2b, 0xcb, 0x46, 0x56, 0xed, 0x36, 0x4c, 0x67, 0x1a, 0x53, 0x45, 0xeb, 0xd9, 0xe5, 0x11,
-	0x79, 0xab, 0xdf, 0x50, 0x91, 0xbc, 0x56, 0x72, 0xb9, 0x28, 0xf5, 0x58, 0xcb, 0xab, 0x33, 0xc5,
-	0xcb, 0x63, 0x45, 0xbc, 0x7c, 0xcf, 0x95, 0xd2, 0x6d, 0x71, 0x13, 0x8a, 0x09, 0x21, 0x15, 0x53,
-	0x9e, 0x14, 0x71, 0xb2, 0xec, 0xdd, 0x78, 0xfa, 0x3b, 0x00, 0x13, 0xfd, 0x78, 0x94, 0xbb, 0x39,
-	0x52, 0x5e, 0x9b, 0x07, 0x8a, 0xb5, 0x3b, 0xb1, 0x60, 0x7e, 0xfc, 0xd6, 0x5e, 0x9d, 0x0b, 0xe5,
-	0x35, 0x3c, 0xee, 0xc7, 0x06, 0x85, 0x8f, 0x49, 0x92, 0x5e, 0x1d, 0xb2, 0xa0, 0x94, 0xa4, 0x04,
-	0x6b, 0x73, 0x0b, 0xe7, 0x71, 0x71, 0xd2, 0x31, 0x35, 0xad, 0x90, 0xd4, 0xf0, 0x54, 0x2b, 0x91,
-	0xc7, 0xc5, 0xa9, 0x85, 0xac, 0x1d, 0x59, 0xda, 0x97, 0x96, 0xf6, 0xcb, 0x4b, 0xcb, 0x0a, 0x3d,
-	0x3c, 0xc9, 0xa1, 0x9d, 0xef, 0x39, 0xfc, 0xf5, 0xe7, 0x41, 0x32, 0xfd, 0x0e, 0x27, 0x66, 0xb1,
-	0x63, 0x76, 0xe9, 0x0a, 0x99, 0x1a, 0xb1, 0xb5, 0x92, 0xf9, 0x64, 0x71, 0x6a, 0xe1, 0xbe, 0x7d,
-	0x1d, 0xb9, 0xbd, 0x2a, 0x94, 0xa7, 0xfa, 0x6b, 0x57, 0x42, 0x67, 0x74, 0x8b, 0x16, 0x49, 0xaa,
-	0xce, 0x14, 0xb3, 0x52, 0x26, 0xc8, 0xdc, 0x58, 0x90, 0x67, 0xa2, 0xef, 0x18, 0x05, 0x5d, 0x26,
-	0xff, 0xd6, 0xa4, 0xef, 0xf3, 0x96, 0xe1, 0xf8, 0xca, 0xab, 0x07, 0x56, 0x3a, 0x9f, 0x2c, 0x4e,
-	0x56, 0xa8, 0x3e, 0xc9, 0xcd, 0xac, 0x5c, 0x8d, 0xd6, 0x9e, 0x07, 0xce, 0xcc, 0x88, 0x74, 0xad,
-	0x1e, 0xd0, 0x3b, 0x24, 0x23, 0x7d, 0xcf, 0xf5, 0x84, 0x95, 0x31, 0x14, 0xe2, 0x8e, 0x3e, 0x25,
-	0x13, 0x35, 0x29, 0x14, 0x7f, 0xa3, 0xac, 0x09, 0x93, 0xbf, 0x30, 0x96, 0x7f, 0xc8, 0xd0, 0x5e,
-	0x89, 0x44, 0xab, 0x42, 0xf9, 0x7d, 0xe7, 0x72, 0x25, 0xbb, 0x44, 0xa6, 0x47, 0x07, 0x74, 0x96,
-	0x24, 0x9b, 0xbc, 0x1f, 0x83, 0x1e, 0x96, 0x74, 0x8e, 0xa4, 0x7b, 0xac, 0xd5, 0x8d, 0x40, 0x4f,
-	0x3b, 0x51, 0xb3, 0x94, 0x78, 0x82, 0x0b, 0x5f, 0x30, 0xf9, 0xef, 0x85, 0xf2, 0x39, 0x6b, 0x1b,
-	0x87, 0xc0, 0xe1, 0xaf, 0xbb, 0x3c, 0x50, 0x37, 0xa9, 0xe2, 0xbf, 0xa2, 0x4a, 0x49, 0x4a, 0x31,
-	0xaf, 0x65, 0x5c, 0xff, 0x71, 0x4c, 0x4d, 0x1f, 0x93, 0x34, 0x6b, 0x28, 0xee, 0x5b, 0xc9, 0x3f,
-	0xbe, 0x79, 0x6a, 0xf8, 0xde, 0x4e, 0x24, 0x5f, 0xa8, 0x93, 0x4c, 0x94, 0x90, 0xae, 0x93, 0x4c,
-	0x94, 0x98, 0xce, 0xdf, 0xcc, 0x73, 0xcb, 0x4d, 0xb2, 0xff, 0xdf, 0x8a, 0xb2, 0x40, 0xdf, 0x7e,
-	0xfb, 0xf1, 0x3e, 0x31, 0x5d, 0x98, 0x88, 0xbf, 0xea, 0x12, 0x7e, 0xf0, 0x08, 0x57, 0x3e, 0xe3,
-	0xc3, 0x01, 0xe0, 0xa3, 0x01, 0xe0, 0xe3, 0x01, 0xa0, 0xd3, 0x01, 0xa0, 0xb3, 0x01, 0xa0, 0xf3,
-	0x01, 0xa0, 0x8b, 0x01, 0xe0, 0x2d, 0x0d, 0x78, 0x5b, 0x03, 0xda, 0xd5, 0x80, 0xf7, 0x34, 0xa0,
-	0x7d, 0x0d, 0xe8, 0x40, 0x03, 0x3a, 0xd4, 0x80, 0x8f, 0x34, 0xe0, 0x63, 0x0d, 0xe8, 0x54, 0x03,
-	0x3e, 0xd3, 0x80, 0xce, 0x35, 0xe0, 0x0b, 0x0d, 0x68, 0x2b, 0x04, 0xb4, 0x1d, 0x02, 0xde, 0x09,
-	0x01, 0x7d, 0x08, 0x01, 0x7f, 0x0a, 0x01, 0xed, 0x86, 0x80, 0xf6, 0x42, 0xc0, 0xfb, 0x21, 0xe0,
-	0x83, 0x10, 0xf0, 0xfa, 0x43, 0x57, 0xda, 0x6a, 0x83, 0xab, 0x0d, 0x4f, 0xb8, 0x81, 0x2d, 0xb8,
-	0xda, 0x94, 0x7e, 0xb3, 0x7c, 0xfd, 0x7f, 0x75, 0x9a, 0x6e, 0x59, 0x29, 0xd1, 0xa9, 0x56, 0x33,
-	0x86, 0xd5, 0xe2, 0xaf, 0x00, 0x00, 0x00, 0xff, 0xff, 0xc4, 0x37, 0xa6, 0x11, 0x77, 0x04, 0x00,
-	0x00,
+	// 969 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x96, 0x4f, 0x68, 0x1b, 0x47,
+	0x14, 0x87, 0x77, 0xac, 0x7f, 0xf5, 0x93, 0x6d, 0x39, 0x13, 0x3b, 0x56, 0x44, 0x3a, 0x72, 0x15,
+	0x68, 0xd5, 0x10, 0xef, 0x1a, 0x07, 0x4a, 0xb1, 0x4b, 0x21, 0x76, 0x4d, 0xf1, 0xa9, 0xb0, 0x6d,
+	0x2f, 0xb9, 0x94, 0xb1, 0x34, 0x5e, 0x2f, 0x92, 0x66, 0xd5, 0xdd, 0x91, 0x5d, 0x05, 0x0a, 0xa1,
+	0xa7, 0x50, 0x28, 0x04, 0x4a, 0xa1, 0x3d, 0x14, 0x4a, 0x0b, 0x25, 0x3d, 0x14, 0x72, 0x0c, 0x3d,
+	0xf9, 0xe8, 0x63, 0xa0, 0x97, 0x9c, 0xd4, 0x68, 0xd4, 0x43, 0x7a, 0xcb, 0x31, 0xc7, 0xb2, 0x33,
+	0xab, 0x6a, 0x65, 0xad, 0x28, 0x04, 0xdd, 0x66, 0xf4, 0x7e, 0xe3, 0xef, 0xf3, 0x9b, 0x79, 0xb6,
+	0x80, 0x34, 0x3d, 0x9f, 0x9e, 0x52, 0xbe, 0x11, 0x08, 0x5a, 0x6b, 0x58, 0xb4, 0xed, 0x5a, 0xec,
+	0x84, 0x71, 0x11, 0x98, 0x6d, 0xdf, 0x13, 0x1e, 0x5e, 0x12, 0x82, 0x9b, 0x51, 0xc6, 0x3c, 0xb9,
+	0x55, 0xda, 0x70, 0x5c, 0x71, 0xdc, 0x39, 0x34, 0x6b, 0x5e, 0xcb, 0x72, 0x3c, 0xc7, 0xb3, 0x54,
+	0xec, 0xb0, 0x73, 0xa4, 0x76, 0x6a, 0xa3, 0x56, 0xfa, 0x78, 0x69, 0x27, 0x16, 0x6f, 0x76, 0x8f,
+	0x84, 0x8e, 0xd7, 0x36, 0x1c, 0xc6, 0x37, 0x4e, 0x68, 0xd3, 0xad, 0x53, 0xc1, 0xac, 0x89, 0x45,
+	0x74, 0xf8, 0x9a, 0xe3, 0x79, 0x4e, 0x93, 0x29, 0x29, 0xca, 0xb9, 0x27, 0xa8, 0x70, 0x3d, 0x1e,
+	0x99, 0x95, 0xae, 0x46, 0xd5, 0xff, 0x04, 0x28, 0xef, 0x46, 0xa5, 0xf2, 0xc5, 0x92, 0x70, 0x5b,
+	0x2c, 0x10, 0xb4, 0xd5, 0x8e, 0x02, 0xd7, 0x27, 0x7f, 0x6b, 0xb7, 0xce, 0xb8, 0x70, 0x8f, 0x5c,
+	0xe6, 0x47, 0x80, 0xca, 0x8f, 0x29, 0xc8, 0xec, 0x87, 0xbd, 0xc0, 0x18, 0xd2, 0x9c, 0xb6, 0x58,
+	0x11, 0xad, 0xa3, 0xea, 0xbc, 0xad, 0xd6, 0x78, 0x17, 0xd2, 0xe1, 0x4f, 0x2d, 0xce, 0xad, 0xa3,
+	0x6a, 0x7e, 0xab, 0x64, 0x6a, 0xa4, 0x39, 0x44, 0x9a, 0x9f, 0x0c, 0x91, 0xbb, 0xf8, 0xbc, 0x57,
+	0x36, 0x1e, 0xfc, 0x55, 0x46, 0x7f, 0xfc, 0x73, 0x96, 0xca, 0x7c, 0x8d, 0xe6, 0x96, 0x91, 0xad,
+	0xce, 0xe2, 0x3d, 0xc8, 0xc7, 0xb0, 0xc5, 0xd4, 0x7a, 0xaa, 0x9a, 0xdf, 0x7a, 0xc3, 0x1c, 0x6f,
+	0xb9, 0xb9, 0xcf, 0x85, 0x2b, 0xba, 0x07, 0xa3, 0xa0, 0x1d, 0x3f, 0x85, 0xab, 0x90, 0xae, 0x53,
+	0x41, 0x8b, 0x69, 0x25, 0xb2, 0x32, 0x21, 0x72, 0x9b, 0x77, 0x6d, 0x95, 0xc0, 0x3b, 0x50, 0xa8,
+	0x79, 0xbe, 0xcf, 0x9a, 0xaa, 0x8f, 0x9f, 0xb9, 0xf5, 0xa0, 0x98, 0x59, 0x4f, 0x55, 0xe7, 0x77,
+	0xb1, 0xec, 0x95, 0x97, 0xf6, 0x46, 0xa5, 0x83, 0x0f, 0x02, 0x7b, 0x29, 0x16, 0x3d, 0xa8, 0x07,
+	0xf8, 0x0a, 0x64, 0x3d, 0xdf, 0x75, 0x5c, 0x5e, 0xcc, 0xaa, 0x2e, 0x44, 0x3b, 0xfc, 0x1e, 0xe4,
+	0x6a, 0x1e, 0x17, 0xec, 0x0b, 0x51, 0xcc, 0x29, 0xff, 0xca, 0x84, 0x7f, 0xd8, 0x43, 0x73, 0x4f,
+	0x87, 0xf6, 0xb9, 0xf0, 0xbb, 0xf6, 0xf0, 0x48, 0x69, 0x1b, 0x16, 0xe2, 0x05, 0xbc, 0x0c, 0xa9,
+	0x06, 0xeb, 0x46, 0x8d, 0x0e, 0x97, 0x78, 0x05, 0x32, 0x27, 0xb4, 0xd9, 0xd1, 0x8d, 0x5e, 0xb0,
+	0xf5, 0x66, 0x7b, 0xee, 0x5d, 0x54, 0xf9, 0x15, 0xc1, 0xe5, 0x8f, 0x85, 0xcf, 0x68, 0x4b, 0x11,
+	0x02, 0x9b, 0x7d, 0xde, 0x61, 0x81, 0xb8, 0xd8, 0x55, 0xf4, 0x4a, 0x5d, 0xc5, 0x90, 0x16, 0xd4,
+	0x6d, 0x2a, 0xea, 0xa2, 0xad, 0xd6, 0xf8, 0x1d, 0xc8, 0xd0, 0x23, 0xc1, 0xfc, 0x62, 0xea, 0x7f,
+	0xef, 0x3c, 0x1d, 0xde, 0xb7, 0xad, 0xe3, 0x95, 0xdf, 0x10, 0x10, 0x2d, 0x7a, 0xbb, 0xdd, 0x6e,
+	0xba, 0x35, 0xd5, 0xd3, 0x71, 0xe7, 0x1d, 0x28, 0xd0, 0x51, 0x4d, 0x5d, 0x0d, 0x1a, 0x5d, 0x4d,
+	0xec, 0x98, 0xba, 0x9a, 0x58, 0x34, 0xbc, 0x9a, 0x59, 0xba, 0x7e, 0x87, 0xe0, 0xaa, 0x76, 0xdd,
+	0x6b, 0xba, 0x8c, 0x8b, 0x71, 0xcd, 0x9b, 0x00, 0x35, 0xf5, 0x71, 0xcc, 0x70, 0x51, 0xf6, 0xca,
+	0xf3, 0x3a, 0x1c, 0xca, 0xcd, 0xeb, 0xc0, 0xac, 0xbd, 0x7e, 0x40, 0x50, 0xd2, 0x5e, 0x1f, 0x52,
+	0xc1, 0x4e, 0x69, 0x77, 0x5c, 0xcc, 0x82, 0xbc, 0xa3, 0x3f, 0x8f, 0x99, 0x2d, 0xc9, 0x5e, 0x19,
+	0xa2, 0x78, 0xa8, 0x06, 0x51, 0x64, 0xd6, 0x6e, 0xbf, 0x23, 0x28, 0x6b, 0xb7, 0x8f, 0x7c, 0x87,
+	0x72, 0xf7, 0x6e, 0xc2, 0x05, 0xbf, 0x0f, 0xcb, 0x5e, 0xac, 0x18, 0xb3, 0xbc, 0x2c, 0x7b, 0xe5,
+	0x42, 0xfc, 0x60, 0xa8, 0x5a, 0x88, 0x87, 0x67, 0xed, 0xfb, 0x0d, 0x82, 0x35, 0xed, 0xfb, 0x69,
+	0xc0, 0xfc, 0x71, 0xcf, 0x37, 0xe1, 0xb5, 0x4e, 0xc0, 0xfc, 0x98, 0x5f, 0x5e, 0xf6, 0xca, 0xb9,
+	0x30, 0x18, 0x7a, 0xe5, 0xc2, 0xe2, 0x8c, 0x7d, 0xb6, 0x7e, 0xc9, 0x40, 0x56, 0x5b, 0xe0, 0x3b,
+	0x90, 0xd5, 0x66, 0xf8, 0xfa, 0xc5, 0x81, 0x4d, 0x18, 0xf5, 0xd2, 0x6a, 0xe2, 0xdf, 0x9a, 0x0a,
+	0xfe, 0xea, 0xcf, 0xbf, 0xbf, 0x9d, 0x5b, 0xa8, 0xe4, 0xa2, 0xff, 0x65, 0xdb, 0xe8, 0xc6, 0x26,
+	0xc2, 0x77, 0xe1, 0xd2, 0xc4, 0x14, 0x62, 0x33, 0x19, 0x33, 0x6d, 0x50, 0xa7, 0x11, 0xaf, 0x29,
+	0xe2, 0x15, 0xbc, 0x12, 0x11, 0xad, 0xd8, 0x88, 0x06, 0x9b, 0x08, 0x37, 0x60, 0x21, 0x3e, 0x55,
+	0xf8, 0xed, 0x64, 0x6c, 0xc2, 0xcc, 0x4d, 0x23, 0xae, 0x29, 0xe2, 0x25, 0x5c, 0x18, 0x12, 0xf5,
+	0xdc, 0x85, 0x30, 0x0e, 0x8b, 0x63, 0xa3, 0x82, 0x6f, 0x24, 0xd3, 0x92, 0x26, 0x69, 0x1a, 0xae,
+	0xa8, 0x70, 0x18, 0x2f, 0x0f, 0x71, 0xd1, 0x2c, 0x85, 0xbc, 0x2f, 0x01, 0x4f, 0x3e, 0x7f, 0x6c,
+	0x25, 0x43, 0xa7, 0x8e, 0xc8, 0x34, 0xf2, 0xeb, 0x8a, 0xbc, 0x86, 0x57, 0x87, 0xe4, 0xf8, 0x68,
+	0x84, 0x78, 0x06, 0x30, 0x7a, 0xcd, 0xf8, 0xad, 0x64, 0xec, 0xc4, 0x4b, 0x9f, 0x86, 0x5b, 0x55,
+	0xb8, 0x02, 0x5e, 0x1c, 0xe2, 0xc2, 0x17, 0x1f, 0x6c, 0xa2, 0xdd, 0x9f, 0xd1, 0x79, 0x9f, 0xa0,
+	0x27, 0x7d, 0x82, 0x9e, 0xf6, 0x89, 0xf1, 0xac, 0x4f, 0x8c, 0xe7, 0x7d, 0x62, 0xbc, 0xe8, 0x13,
+	0xe3, 0x65, 0x9f, 0xa0, 0x7b, 0x92, 0xa0, 0xfb, 0x92, 0x18, 0x0f, 0x25, 0x41, 0x8f, 0x24, 0x31,
+	0x1e, 0x4b, 0x62, 0x9c, 0x49, 0x62, 0x9c, 0x4b, 0x82, 0x9e, 0x48, 0x82, 0x9e, 0x4a, 0x62, 0x3c,
+	0x93, 0x04, 0x3d, 0x97, 0xc4, 0x78, 0x21, 0x09, 0x7a, 0x29, 0x89, 0x71, 0x6f, 0x40, 0x8c, 0xfb,
+	0x03, 0x82, 0x1e, 0x0c, 0x88, 0xf1, 0xfd, 0x80, 0xa0, 0x9f, 0x06, 0xc4, 0x78, 0x38, 0x20, 0xc6,
+	0xa3, 0x01, 0x41, 0x8f, 0x07, 0x04, 0x9d, 0x0d, 0x08, 0xba, 0x73, 0xd3, 0xf1, 0x4c, 0x71, 0xcc,
+	0xc4, 0xb1, 0xcb, 0x9d, 0xc0, 0xe4, 0x4c, 0x9c, 0x7a, 0x7e, 0xc3, 0x1a, 0xff, 0xfe, 0xd2, 0x6e,
+	0x38, 0x96, 0x10, 0xbc, 0x7d, 0x78, 0x98, 0x55, 0xb3, 0x76, 0xeb, 0xdf, 0x00, 0x00, 0x00, 0xff,
+	0xff, 0x4b, 0x7f, 0x4f, 0x25, 0xd7, 0x09, 0x00, 0x00,
 }
 
 func (this *Event) Equal(that interface{}) bool {
@@ -353,6 +692,201 @@ func (this *StreamEventsRequest) Equal(that interface{}) bool {
 	}
 	return true
 }
+func (this *StreamApplicationEventsRequest) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	that1, ok := that.(*StreamApplicationEventsRequest)
+	if !ok {
+		that2, ok := that.(StreamApplicationEventsRequest)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return this == nil
+	} else if this == nil {
+		return false
+	}
+	if len(this.ApplicationIDs) != len(that1.ApplicationIDs) {
+		return false
+	}
+	for i := range this.ApplicationIDs {
+		if this.ApplicationIDs[i] != that1.ApplicationIDs[i] {
+			return false
+		}
+	}
+	if this.Tail != that1.Tail {
+		return false
+	}
+	if that1.After == nil {
+		if this.After != nil {
+			return false
+		}
+	} else if !this.After.Equal(*that1.After) {
+		return false
+	}
+	return true
+}
+func (this *StreamClientEventsRequest) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	that1, ok := that.(*StreamClientEventsRequest)
+	if !ok {
+		that2, ok := that.(StreamClientEventsRequest)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return this == nil
+	} else if this == nil {
+		return false
+	}
+	if len(this.ClientIDs) != len(that1.ClientIDs) {
+		return false
+	}
+	for i := range this.ClientIDs {
+		if this.ClientIDs[i] != that1.ClientIDs[i] {
+			return false
+		}
+	}
+	if this.Tail != that1.Tail {
+		return false
+	}
+	if that1.After == nil {
+		if this.After != nil {
+			return false
+		}
+	} else if !this.After.Equal(*that1.After) {
+		return false
+	}
+	return true
+}
+func (this *StreamGatewayEventsRequest) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	that1, ok := that.(*StreamGatewayEventsRequest)
+	if !ok {
+		that2, ok := that.(StreamGatewayEventsRequest)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return this == nil
+	} else if this == nil {
+		return false
+	}
+	if len(this.GatewayIDs) != len(that1.GatewayIDs) {
+		return false
+	}
+	for i := range this.GatewayIDs {
+		if this.GatewayIDs[i] != that1.GatewayIDs[i] {
+			return false
+		}
+	}
+	if this.Tail != that1.Tail {
+		return false
+	}
+	if that1.After == nil {
+		if this.After != nil {
+			return false
+		}
+	} else if !this.After.Equal(*that1.After) {
+		return false
+	}
+	return true
+}
+func (this *StreamOrganizationEventsRequest) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	that1, ok := that.(*StreamOrganizationEventsRequest)
+	if !ok {
+		that2, ok := that.(StreamOrganizationEventsRequest)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return this == nil
+	} else if this == nil {
+		return false
+	}
+	if len(this.OrganizationIDs) != len(that1.OrganizationIDs) {
+		return false
+	}
+	for i := range this.OrganizationIDs {
+		if this.OrganizationIDs[i] != that1.OrganizationIDs[i] {
+			return false
+		}
+	}
+	if this.Tail != that1.Tail {
+		return false
+	}
+	if that1.After == nil {
+		if this.After != nil {
+			return false
+		}
+	} else if !this.After.Equal(*that1.After) {
+		return false
+	}
+	return true
+}
+func (this *StreamUserEventsRequest) Equal(that interface{}) bool {
+	if that == nil {
+		return this == nil
+	}
+
+	that1, ok := that.(*StreamUserEventsRequest)
+	if !ok {
+		that2, ok := that.(StreamUserEventsRequest)
+		if ok {
+			that1 = &that2
+		} else {
+			return false
+		}
+	}
+	if that1 == nil {
+		return this == nil
+	} else if this == nil {
+		return false
+	}
+	if len(this.UserIDs) != len(that1.UserIDs) {
+		return false
+	}
+	for i := range this.UserIDs {
+		if this.UserIDs[i] != that1.UserIDs[i] {
+			return false
+		}
+	}
+	if this.Tail != that1.Tail {
+		return false
+	}
+	if that1.After == nil {
+		if this.After != nil {
+			return false
+		}
+	} else if !this.After.Equal(*that1.After) {
+		return false
+	}
+	return true
+}
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ context.Context
@@ -369,6 +903,16 @@ type EventsClient interface {
 	// Stream live events, optionally with a tail of historical events (depending on server support and retention policy).
 	// Events may arrive out-of-order.
 	Stream(ctx context.Context, in *StreamEventsRequest, opts ...grpc.CallOption) (Events_StreamClient, error)
+	// Like the Stream rpc, but then scoped to Application events.
+	StreamApplication(ctx context.Context, in *StreamApplicationEventsRequest, opts ...grpc.CallOption) (Events_StreamApplicationClient, error)
+	// Like the Stream rpc, but then scoped to Client events.
+	StreamClient(ctx context.Context, in *StreamClientEventsRequest, opts ...grpc.CallOption) (Events_StreamClientClient, error)
+	// Like the Stream rpc, but then scoped to Gateway events.
+	StreamGateway(ctx context.Context, in *StreamGatewayEventsRequest, opts ...grpc.CallOption) (Events_StreamGatewayClient, error)
+	// Like the Stream rpc, but then scoped to Organization events.
+	StreamOrganization(ctx context.Context, in *StreamOrganizationEventsRequest, opts ...grpc.CallOption) (Events_StreamOrganizationClient, error)
+	// Like the Stream rpc, but then scoped to User events.
+	StreamUser(ctx context.Context, in *StreamUserEventsRequest, opts ...grpc.CallOption) (Events_StreamUserClient, error)
 }
 
 type eventsClient struct {
@@ -411,11 +955,181 @@ func (x *eventsStreamClient) Recv() (*Event, error) {
 	return m, nil
 }
 
+func (c *eventsClient) StreamApplication(ctx context.Context, in *StreamApplicationEventsRequest, opts ...grpc.CallOption) (Events_StreamApplicationClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Events_serviceDesc.Streams[1], "/ttn.lorawan.v3.Events/StreamApplication", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &eventsStreamApplicationClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Events_StreamApplicationClient interface {
+	Recv() (*Event, error)
+	grpc.ClientStream
+}
+
+type eventsStreamApplicationClient struct {
+	grpc.ClientStream
+}
+
+func (x *eventsStreamApplicationClient) Recv() (*Event, error) {
+	m := new(Event)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *eventsClient) StreamClient(ctx context.Context, in *StreamClientEventsRequest, opts ...grpc.CallOption) (Events_StreamClientClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Events_serviceDesc.Streams[2], "/ttn.lorawan.v3.Events/StreamClient", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &eventsStreamClientClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Events_StreamClientClient interface {
+	Recv() (*Event, error)
+	grpc.ClientStream
+}
+
+type eventsStreamClientClient struct {
+	grpc.ClientStream
+}
+
+func (x *eventsStreamClientClient) Recv() (*Event, error) {
+	m := new(Event)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *eventsClient) StreamGateway(ctx context.Context, in *StreamGatewayEventsRequest, opts ...grpc.CallOption) (Events_StreamGatewayClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Events_serviceDesc.Streams[3], "/ttn.lorawan.v3.Events/StreamGateway", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &eventsStreamGatewayClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Events_StreamGatewayClient interface {
+	Recv() (*Event, error)
+	grpc.ClientStream
+}
+
+type eventsStreamGatewayClient struct {
+	grpc.ClientStream
+}
+
+func (x *eventsStreamGatewayClient) Recv() (*Event, error) {
+	m := new(Event)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *eventsClient) StreamOrganization(ctx context.Context, in *StreamOrganizationEventsRequest, opts ...grpc.CallOption) (Events_StreamOrganizationClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Events_serviceDesc.Streams[4], "/ttn.lorawan.v3.Events/StreamOrganization", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &eventsStreamOrganizationClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Events_StreamOrganizationClient interface {
+	Recv() (*Event, error)
+	grpc.ClientStream
+}
+
+type eventsStreamOrganizationClient struct {
+	grpc.ClientStream
+}
+
+func (x *eventsStreamOrganizationClient) Recv() (*Event, error) {
+	m := new(Event)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
+func (c *eventsClient) StreamUser(ctx context.Context, in *StreamUserEventsRequest, opts ...grpc.CallOption) (Events_StreamUserClient, error) {
+	stream, err := c.cc.NewStream(ctx, &_Events_serviceDesc.Streams[5], "/ttn.lorawan.v3.Events/StreamUser", opts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &eventsStreamUserClient{stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+type Events_StreamUserClient interface {
+	Recv() (*Event, error)
+	grpc.ClientStream
+}
+
+type eventsStreamUserClient struct {
+	grpc.ClientStream
+}
+
+func (x *eventsStreamUserClient) Recv() (*Event, error) {
+	m := new(Event)
+	if err := x.ClientStream.RecvMsg(m); err != nil {
+		return nil, err
+	}
+	return m, nil
+}
+
 // EventsServer is the server API for Events service.
 type EventsServer interface {
 	// Stream live events, optionally with a tail of historical events (depending on server support and retention policy).
 	// Events may arrive out-of-order.
 	Stream(*StreamEventsRequest, Events_StreamServer) error
+	// Like the Stream rpc, but then scoped to Application events.
+	StreamApplication(*StreamApplicationEventsRequest, Events_StreamApplicationServer) error
+	// Like the Stream rpc, but then scoped to Client events.
+	StreamClient(*StreamClientEventsRequest, Events_StreamClientServer) error
+	// Like the Stream rpc, but then scoped to Gateway events.
+	StreamGateway(*StreamGatewayEventsRequest, Events_StreamGatewayServer) error
+	// Like the Stream rpc, but then scoped to Organization events.
+	StreamOrganization(*StreamOrganizationEventsRequest, Events_StreamOrganizationServer) error
+	// Like the Stream rpc, but then scoped to User events.
+	StreamUser(*StreamUserEventsRequest, Events_StreamUserServer) error
 }
 
 func RegisterEventsServer(s *grpc.Server, srv EventsServer) {
@@ -443,6 +1157,111 @@ func (x *eventsStreamServer) Send(m *Event) error {
 	return x.ServerStream.SendMsg(m)
 }
 
+func _Events_StreamApplication_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamApplicationEventsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(EventsServer).StreamApplication(m, &eventsStreamApplicationServer{stream})
+}
+
+type Events_StreamApplicationServer interface {
+	Send(*Event) error
+	grpc.ServerStream
+}
+
+type eventsStreamApplicationServer struct {
+	grpc.ServerStream
+}
+
+func (x *eventsStreamApplicationServer) Send(m *Event) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Events_StreamClient_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamClientEventsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(EventsServer).StreamClient(m, &eventsStreamClientServer{stream})
+}
+
+type Events_StreamClientServer interface {
+	Send(*Event) error
+	grpc.ServerStream
+}
+
+type eventsStreamClientServer struct {
+	grpc.ServerStream
+}
+
+func (x *eventsStreamClientServer) Send(m *Event) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Events_StreamGateway_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamGatewayEventsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(EventsServer).StreamGateway(m, &eventsStreamGatewayServer{stream})
+}
+
+type Events_StreamGatewayServer interface {
+	Send(*Event) error
+	grpc.ServerStream
+}
+
+type eventsStreamGatewayServer struct {
+	grpc.ServerStream
+}
+
+func (x *eventsStreamGatewayServer) Send(m *Event) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Events_StreamOrganization_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamOrganizationEventsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(EventsServer).StreamOrganization(m, &eventsStreamOrganizationServer{stream})
+}
+
+type Events_StreamOrganizationServer interface {
+	Send(*Event) error
+	grpc.ServerStream
+}
+
+type eventsStreamOrganizationServer struct {
+	grpc.ServerStream
+}
+
+func (x *eventsStreamOrganizationServer) Send(m *Event) error {
+	return x.ServerStream.SendMsg(m)
+}
+
+func _Events_StreamUser_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamUserEventsRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(EventsServer).StreamUser(m, &eventsStreamUserServer{stream})
+}
+
+type Events_StreamUserServer interface {
+	Send(*Event) error
+	grpc.ServerStream
+}
+
+type eventsStreamUserServer struct {
+	grpc.ServerStream
+}
+
+func (x *eventsStreamUserServer) Send(m *Event) error {
+	return x.ServerStream.SendMsg(m)
+}
+
 var _Events_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "ttn.lorawan.v3.Events",
 	HandlerType: (*EventsServer)(nil),
@@ -451,6 +1270,31 @@ var _Events_serviceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "Stream",
 			Handler:       _Events_Stream_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamApplication",
+			Handler:       _Events_StreamApplication_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamClient",
+			Handler:       _Events_StreamClient_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamGateway",
+			Handler:       _Events_StreamGateway_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamOrganization",
+			Handler:       _Events_StreamOrganization_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamUser",
+			Handler:       _Events_StreamUser_Handler,
 			ServerStreams: true,
 		},
 	},
@@ -600,6 +1444,246 @@ func (m *StreamEventsRequest) MarshalTo(dAtA []byte) (int, error) {
 	return i, nil
 }
 
+func (m *StreamApplicationEventsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StreamApplicationEventsRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.ApplicationIDs) > 0 {
+		for _, s := range m.ApplicationIDs {
+			dAtA[i] = 0xa
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.Tail != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(m.Tail))
+	}
+	if m.After != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)))
+		n4, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.After, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n4
+	}
+	return i, nil
+}
+
+func (m *StreamClientEventsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StreamClientEventsRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.ClientIDs) > 0 {
+		for _, s := range m.ClientIDs {
+			dAtA[i] = 0xa
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.Tail != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(m.Tail))
+	}
+	if m.After != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)))
+		n5, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.After, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n5
+	}
+	return i, nil
+}
+
+func (m *StreamGatewayEventsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StreamGatewayEventsRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.GatewayIDs) > 0 {
+		for _, s := range m.GatewayIDs {
+			dAtA[i] = 0xa
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.Tail != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(m.Tail))
+	}
+	if m.After != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)))
+		n6, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.After, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n6
+	}
+	return i, nil
+}
+
+func (m *StreamOrganizationEventsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StreamOrganizationEventsRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.OrganizationIDs) > 0 {
+		for _, s := range m.OrganizationIDs {
+			dAtA[i] = 0xa
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.Tail != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(m.Tail))
+	}
+	if m.After != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)))
+		n7, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.After, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n7
+	}
+	return i, nil
+}
+
+func (m *StreamUserEventsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalTo(dAtA)
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *StreamUserEventsRequest) MarshalTo(dAtA []byte) (int, error) {
+	var i int
+	_ = i
+	var l int
+	_ = l
+	if len(m.UserIDs) > 0 {
+		for _, s := range m.UserIDs {
+			dAtA[i] = 0xa
+			i++
+			l = len(s)
+			for l >= 1<<7 {
+				dAtA[i] = uint8(uint64(l)&0x7f | 0x80)
+				l >>= 7
+				i++
+			}
+			dAtA[i] = uint8(l)
+			i++
+			i += copy(dAtA[i:], s)
+		}
+	}
+	if m.Tail != 0 {
+		dAtA[i] = 0x10
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(m.Tail))
+	}
+	if m.After != nil {
+		dAtA[i] = 0x1a
+		i++
+		i = encodeVarintEvents(dAtA, i, uint64(github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)))
+		n8, err := github_com_gogo_protobuf_types.StdTimeMarshalTo(*m.After, dAtA[i:])
+		if err != nil {
+			return 0, err
+		}
+		i += n8
+	}
+	return i, nil
+}
+
 func encodeVarintEvents(dAtA []byte, offset int, v uint64) int {
 	for v >= 1<<7 {
 		dAtA[offset] = uint8(v&0x7f | 0x80)
@@ -665,6 +1749,86 @@ func NewPopulatedStreamEventsRequest(r randyEvents, easy bool) *StreamEventsRequ
 	return this
 }
 
+func NewPopulatedStreamApplicationEventsRequest(r randyEvents, easy bool) *StreamApplicationEventsRequest {
+	this := &StreamApplicationEventsRequest{}
+	v8 := r.Intn(10)
+	this.ApplicationIDs = make([]string, v8)
+	for i := 0; i < v8; i++ {
+		this.ApplicationIDs[i] = randStringEvents(r)
+	}
+	this.Tail = r.Uint32()
+	if r.Intn(10) != 0 {
+		this.After = github_com_gogo_protobuf_types.NewPopulatedStdTime(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStreamClientEventsRequest(r randyEvents, easy bool) *StreamClientEventsRequest {
+	this := &StreamClientEventsRequest{}
+	v9 := r.Intn(10)
+	this.ClientIDs = make([]string, v9)
+	for i := 0; i < v9; i++ {
+		this.ClientIDs[i] = randStringEvents(r)
+	}
+	this.Tail = r.Uint32()
+	if r.Intn(10) != 0 {
+		this.After = github_com_gogo_protobuf_types.NewPopulatedStdTime(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStreamGatewayEventsRequest(r randyEvents, easy bool) *StreamGatewayEventsRequest {
+	this := &StreamGatewayEventsRequest{}
+	v10 := r.Intn(10)
+	this.GatewayIDs = make([]string, v10)
+	for i := 0; i < v10; i++ {
+		this.GatewayIDs[i] = randStringEvents(r)
+	}
+	this.Tail = r.Uint32()
+	if r.Intn(10) != 0 {
+		this.After = github_com_gogo_protobuf_types.NewPopulatedStdTime(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStreamOrganizationEventsRequest(r randyEvents, easy bool) *StreamOrganizationEventsRequest {
+	this := &StreamOrganizationEventsRequest{}
+	v11 := r.Intn(10)
+	this.OrganizationIDs = make([]string, v11)
+	for i := 0; i < v11; i++ {
+		this.OrganizationIDs[i] = randStringEvents(r)
+	}
+	this.Tail = r.Uint32()
+	if r.Intn(10) != 0 {
+		this.After = github_com_gogo_protobuf_types.NewPopulatedStdTime(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
+func NewPopulatedStreamUserEventsRequest(r randyEvents, easy bool) *StreamUserEventsRequest {
+	this := &StreamUserEventsRequest{}
+	v12 := r.Intn(10)
+	this.UserIDs = make([]string, v12)
+	for i := 0; i < v12; i++ {
+		this.UserIDs[i] = randStringEvents(r)
+	}
+	this.Tail = r.Uint32()
+	if r.Intn(10) != 0 {
+		this.After = github_com_gogo_protobuf_types.NewPopulatedStdTime(r, easy)
+	}
+	if !easy && r.Intn(10) != 0 {
+	}
+	return this
+}
+
 type randyEvents interface {
 	Float32() float32
 	Float64() float64
@@ -684,9 +1848,9 @@ func randUTF8RuneEvents(r randyEvents) rune {
 	return rune(ru + 61)
 }
 func randStringEvents(r randyEvents) string {
-	v8 := r.Intn(100)
-	tmps := make([]rune, v8)
-	for i := 0; i < v8; i++ {
+	v13 := r.Intn(100)
+	tmps := make([]rune, v13)
+	for i := 0; i < v13; i++ {
 		tmps[i] = randUTF8RuneEvents(r)
 	}
 	return string(tmps)
@@ -708,11 +1872,11 @@ func randFieldEvents(dAtA []byte, r randyEvents, fieldNumber int, wire int) []by
 	switch wire {
 	case 0:
 		dAtA = encodeVarintPopulateEvents(dAtA, uint64(key))
-		v9 := r.Int63()
+		v14 := r.Int63()
 		if r.Intn(2) == 0 {
-			v9 *= -1
+			v14 *= -1
 		}
-		dAtA = encodeVarintPopulateEvents(dAtA, uint64(v9))
+		dAtA = encodeVarintPopulateEvents(dAtA, uint64(v14))
 	case 1:
 		dAtA = encodeVarintPopulateEvents(dAtA, uint64(key))
 		dAtA = append(dAtA, byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)), byte(r.Intn(256)))
@@ -806,6 +1970,116 @@ func (m *StreamEventsRequest) Size() (n int) {
 	return n
 }
 
+func (m *StreamApplicationEventsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.ApplicationIDs) > 0 {
+		for _, s := range m.ApplicationIDs {
+			l = len(s)
+			n += 1 + l + sovEvents(uint64(l))
+		}
+	}
+	if m.Tail != 0 {
+		n += 1 + sovEvents(uint64(m.Tail))
+	}
+	if m.After != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)
+		n += 1 + l + sovEvents(uint64(l))
+	}
+	return n
+}
+
+func (m *StreamClientEventsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.ClientIDs) > 0 {
+		for _, s := range m.ClientIDs {
+			l = len(s)
+			n += 1 + l + sovEvents(uint64(l))
+		}
+	}
+	if m.Tail != 0 {
+		n += 1 + sovEvents(uint64(m.Tail))
+	}
+	if m.After != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)
+		n += 1 + l + sovEvents(uint64(l))
+	}
+	return n
+}
+
+func (m *StreamGatewayEventsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.GatewayIDs) > 0 {
+		for _, s := range m.GatewayIDs {
+			l = len(s)
+			n += 1 + l + sovEvents(uint64(l))
+		}
+	}
+	if m.Tail != 0 {
+		n += 1 + sovEvents(uint64(m.Tail))
+	}
+	if m.After != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)
+		n += 1 + l + sovEvents(uint64(l))
+	}
+	return n
+}
+
+func (m *StreamOrganizationEventsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.OrganizationIDs) > 0 {
+		for _, s := range m.OrganizationIDs {
+			l = len(s)
+			n += 1 + l + sovEvents(uint64(l))
+		}
+	}
+	if m.Tail != 0 {
+		n += 1 + sovEvents(uint64(m.Tail))
+	}
+	if m.After != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)
+		n += 1 + l + sovEvents(uint64(l))
+	}
+	return n
+}
+
+func (m *StreamUserEventsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.UserIDs) > 0 {
+		for _, s := range m.UserIDs {
+			l = len(s)
+			n += 1 + l + sovEvents(uint64(l))
+		}
+	}
+	if m.Tail != 0 {
+		n += 1 + sovEvents(uint64(m.Tail))
+	}
+	if m.After != nil {
+		l = github_com_gogo_protobuf_types.SizeOfStdTime(*m.After)
+		n += 1 + l + sovEvents(uint64(l))
+	}
+	return n
+}
+
 func sovEvents(x uint64) (n int) {
 	for {
 		n++
@@ -851,6 +2125,66 @@ func (this *StreamEventsRequest) String() string {
 	}
 	s := strings.Join([]string{`&StreamEventsRequest{`,
 		`Identifiers:` + strings.Replace(fmt.Sprintf("%v", this.Identifiers), "EntityIdentifiers", "EntityIdentifiers", 1) + `,`,
+		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
+		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *StreamApplicationEventsRequest) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&StreamApplicationEventsRequest{`,
+		`ApplicationIDs:` + fmt.Sprintf("%v", this.ApplicationIDs) + `,`,
+		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
+		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *StreamClientEventsRequest) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&StreamClientEventsRequest{`,
+		`ClientIDs:` + fmt.Sprintf("%v", this.ClientIDs) + `,`,
+		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
+		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *StreamGatewayEventsRequest) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&StreamGatewayEventsRequest{`,
+		`GatewayIDs:` + fmt.Sprintf("%v", this.GatewayIDs) + `,`,
+		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
+		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *StreamOrganizationEventsRequest) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&StreamOrganizationEventsRequest{`,
+		`OrganizationIDs:` + fmt.Sprintf("%v", this.OrganizationIDs) + `,`,
+		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
+		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
+		`}`,
+	}, "")
+	return s
+}
+func (this *StreamUserEventsRequest) String() string {
+	if this == nil {
+		return "nil"
+	}
+	s := strings.Join([]string{`&StreamUserEventsRequest{`,
+		`UserIDs:` + fmt.Sprintf("%v", this.UserIDs) + `,`,
 		`Tail:` + fmt.Sprintf("%v", this.Tail) + `,`,
 		`After:` + strings.Replace(fmt.Sprintf("%v", this.After), "Timestamp", "types.Timestamp", 1) + `,`,
 		`}`,
@@ -1307,6 +2641,706 @@ func (m *StreamEventsRequest) Unmarshal(dAtA []byte) error {
 			if err := m.Identifiers[len(m.Identifiers)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
+			}
+			m.Tail = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Tail |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field After", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.After == nil {
+				m.After = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.After, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipEvents(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StreamApplicationEventsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowEvents
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StreamApplicationEventsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StreamApplicationEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ApplicationIDs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ApplicationIDs = append(m.ApplicationIDs, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
+			}
+			m.Tail = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Tail |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field After", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.After == nil {
+				m.After = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.After, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipEvents(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StreamClientEventsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowEvents
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StreamClientEventsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StreamClientEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ClientIDs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.ClientIDs = append(m.ClientIDs, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
+			}
+			m.Tail = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Tail |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field After", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.After == nil {
+				m.After = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.After, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipEvents(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StreamGatewayEventsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowEvents
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StreamGatewayEventsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StreamGatewayEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field GatewayIDs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.GatewayIDs = append(m.GatewayIDs, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
+			}
+			m.Tail = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Tail |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field After", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.After == nil {
+				m.After = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.After, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipEvents(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StreamOrganizationEventsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowEvents
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StreamOrganizationEventsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StreamOrganizationEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field OrganizationIDs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.OrganizationIDs = append(m.OrganizationIDs, string(dAtA[iNdEx:postIndex]))
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Tail", wireType)
+			}
+			m.Tail = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Tail |= uint32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field After", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.After == nil {
+				m.After = new(time.Time)
+			}
+			if err := github_com_gogo_protobuf_types.StdTimeUnmarshal(m.After, dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipEvents(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *StreamUserEventsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowEvents
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: StreamUserEventsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: StreamUserEventsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UserIDs", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowEvents
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthEvents
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthEvents
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UserIDs = append(m.UserIDs, string(dAtA[iNdEx:postIndex]))
 			iNdEx = postIndex
 		case 2:
 			if wireType != 0 {
